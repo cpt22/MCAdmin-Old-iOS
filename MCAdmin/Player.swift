@@ -53,13 +53,11 @@ class Player {
             }
             // Parse JSON data
             if let data = data {
-                print(data)
+
                 let response = self.parseJsonResponse(data: data)
                 
                 if (response == "success") {
-                    print("success")
                 } else if (response == "bad token") {
-                    print("bad token")
                 } else {
                 }
             }
@@ -69,7 +67,7 @@ class Player {
     
     func parseJsonResponse(data: Data) -> String {
         var response = ""
-        print(data)
+
         do {
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
             // Parse JSON data

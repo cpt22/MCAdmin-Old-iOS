@@ -91,9 +91,7 @@ class RegisterViewController: UIViewController {
     func updateNotificationsInDB(APIToken: String, deviceID: String, currentStatus: Int) {
         var url = "https://www.cwru.club/api/updateNotificationPrefs?token=" + APIToken + "&device="
         url += deviceID + "&status=" + String(currentStatus)
-        
-        print(url)
-        
+
         guard let myURL = URL(string: url) else {
             return
         }
@@ -111,7 +109,6 @@ class RegisterViewController: UIViewController {
                 let webResponse = self.parseJsonResponse(data: data)
                 
                 if (webResponse == "success") {
-                    print("updated DB")
                 } else if (webResponse == "bad token") {
                 }
             }

@@ -116,13 +116,7 @@
                             <outlet property="delegate" destination="f5f-SS-asM" id="2Yc-b0-iNW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZvE-wf-UeT">
-                        <barButtonItem key="leftBarButtonItem" title="Copy APNS ID" id="94C-0Y-4qV">
-                            <connections>
-                                <action selector="copyTokenClick:" destination="f5f-SS-asM" id="Fir-4h-nkM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Players" id="3PY-mq-Zdn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QgX-yj-W2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
