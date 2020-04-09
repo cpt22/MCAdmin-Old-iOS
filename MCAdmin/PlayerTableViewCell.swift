@@ -10,6 +10,8 @@ import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
     
+   // var player: Player
+    
     @IBOutlet weak var usernameLabel:UILabel! {
         didSet {
             usernameLabel.numberOfLines = 1
