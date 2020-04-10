@@ -14,15 +14,20 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
     
-    var player: Player?
+    @IBOutlet weak var kickButton: UIButton!
+    @IBOutlet weak var banButton: UIButton!
     
+    var player: Player?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let player = player {
-            usernameLabel.text = player.username
-            uuidLabel.text = player.uuid
+            self.player = player
+            loadPlayer()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadPlayer), name: Notification.Name("reloadPlayerDetail"), object: nil)
     }
     
     
@@ -49,11 +54,13 @@ class PlayerDetailViewController: UIViewController {
     }
     
     @IBAction func banButtonAction(_ sender: Any) {
-        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to ban " + self.player!.username + "?", preferredStyle: .alert)
+        var msg = "Are you sure you want to " + (player?.banned == 1 ? "UNBAN" : "BAN") + " " + self.player!.username
+            msg += "?"
+        let dialogMessage = UIAlertController(title: "Confirm", message: msg, preferredStyle: .alert)
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-            self.player?.ban()
+            self.player?.ban(val: (self.player?.banned == 1 ? 0 : 1))
         })
         
         // Create Cancel button with action handlder
@@ -66,6 +73,26 @@ class PlayerDetailViewController: UIViewController {
         
         // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
+}
+    
+    // MARK: Methods
+    @objc func loadPlayer() {
+        usernameLabel.text = self.player?.username
+        uuidLabel.text = self.player?.uuid
+        
+        if (self.player?.status == 1) {
+            kickButton.isEnabled = true
+            kickButton.tintColor = UIColor.orange
+        } else {
+            kickButton.isEnabled = false
+            kickButton.tintColor = UIColor.lightGray
+        }
+        
+        if (player?.banned == 1) {
+            banButton.setTitle("UNBAN", for: .normal)
+        } else {
+            banButton.setTitle("BAN", for: .normal)
+        }
     }
     
     /*

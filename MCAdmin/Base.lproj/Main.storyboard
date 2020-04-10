@@ -177,6 +177,8 @@
                         <viewLayoutGuide key="safeArea" id="AF2-jN-gba"/>
                     </view>
                     <connections>
+                        <outlet property="banButton" destination="C3h-4w-2UQ" id="ma2-8f-MvM"/>
+                        <outlet property="kickButton" destination="WIj-rk-7Hs" id="gmF-LH-zd5"/>
                         <outlet property="usernameLabel" destination="eew-8K-y4H" id="4l7-Uk-YSe"/>
                         <outlet property="uuidLabel" destination="dxe-Hu-eLN" id="GXc-40-sIo"/>
                     </connections>
