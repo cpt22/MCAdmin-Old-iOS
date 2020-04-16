@@ -23,35 +23,42 @@
             </objects>
             <point key="canvasLocation" x="-1457" y="60"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="yhB-AR-aq6">
             <objects>
-                <viewController id="DtK-TK-u5c" customClass="RegisterViewController" customModule="MCAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DtK-TK-u5c" customClass="LoginViewController" customModule="MCAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BgL-mN-s48">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-M4-DDP">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-M4-DDP">
                                 <rect key="frame" x="20" y="431" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dub-LL-1xa">
-                                <rect key="frame" x="179" y="473" width="57" height="30"/>
+                                <rect key="frame" x="189" y="473" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="tryRegister:" destination="DtK-TK-u5c" eventType="touchUpInside" id="6k5-Jy-Pwf"/>
+                                    <action selector="doLogin:" destination="DtK-TK-u5c" eventType="touchUpInside" id="LBh-O7-H9b"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8P-ZV-TOV">
+                                <rect key="frame" x="21" y="389" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bLL-sv-oPi"/>
                     </view>
                     <navigationItem key="navigationItem" id="8eo-Jo-CHb"/>
                     <connections>
-                        <outlet property="appTokenField" destination="cYF-M4-DDP" id="R7b-Bt-ZKo"/>
+                        <outlet property="passwordField" destination="cYF-M4-DDP" id="a11-uw-I8I"/>
+                        <outlet property="usernameField" destination="i8P-ZV-TOV" id="HaE-qe-RbW"/>
                         <segue destination="f5f-SS-asM" kind="show" identifier="loginSegue" id="FGN-Th-eru"/>
                     </connections>
                 </viewController>

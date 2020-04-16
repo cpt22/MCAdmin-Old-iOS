@@ -18,7 +18,7 @@
 		1994D4B7243A94AB0090E08D /* PlayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994D4B6243A94AB0090E08D /* PlayerTableViewController.swift */; };
 		1994D4B9243A95560090E08D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994D4B8243A95560090E08D /* AppDelegate.swift */; };
 		199C3A34243AB903005E1EDB /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C3A33243AB903005E1EDB /* PlayerTableViewCell.swift */; };
-		199C3A36243AD12D005E1EDB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C3A35243AD12D005E1EDB /* RegisterViewController.swift */; };
+		199C3A36243AD12D005E1EDB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C3A35243AD12D005E1EDB /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		1994D4B6243A94AB0090E08D /* PlayerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerTableViewController.swift; path = ../../../../Downloads/www_cwru_club/PlayerTableViewController.swift; sourceTree = "<group>"; };
 		1994D4B8243A95560090E08D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../../Downloads/www_cwru_club/AppDelegate.swift; sourceTree = "<group>"; };
 		199C3A33243AB903005E1EDB /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		199C3A35243AD12D005E1EDB /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		199C3A35243AD12D005E1EDB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				1994D4B5243A948C0090E08D /* MCAdmin.entitlements */,
 				1994D4B8243A95560090E08D /* AppDelegate.swift */,
 				1994D487243A94480090E08D /* SceneDelegate.swift */,
-				199C3A35243AD12D005E1EDB /* RegisterViewController.swift */,
+				199C3A35243AD12D005E1EDB /* LoginViewController.swift */,
 				1994D4B6243A94AB0090E08D /* PlayerTableViewController.swift */,
 				1994D48B243A94480090E08D /* Main.storyboard */,
 				1994D48E243A944A0090E08D /* Assets.xcassets */,
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				199C3A34243AB903005E1EDB /* PlayerTableViewCell.swift in Sources */,
-				199C3A36243AD12D005E1EDB /* RegisterViewController.swift in Sources */,
+				199C3A36243AD12D005E1EDB /* LoginViewController.swift in Sources */,
 				197A4DA4243EB3B2002D31D0 /* PlayerDetailViewController.swift in Sources */,
 				1994D4B9243A95560090E08D /* AppDelegate.swift in Sources */,
 				197A4DA6243EB48C002D31D0 /* Player.swift in Sources */,
