@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1956B74F24511D3C00DF1B92 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956B74E24511D3C00DF1B92 /* Server.swift */; };
+		1956B751245124E500DF1B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1956B750245124E500DF1B92 /* User.swift */; };
 		197A4DA4243EB3B2002D31D0 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197A4DA3243EB3B2002D31D0 /* PlayerDetailViewController.swift */; };
 		197A4DA6243EB48C002D31D0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197A4DA5243EB48C002D31D0 /* Player.swift */; };
 		1994D488243A94480090E08D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994D487243A94480090E08D /* SceneDelegate.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1956B74E24511D3C00DF1B92 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		1956B750245124E500DF1B92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		197A4DA3243EB3B2002D31D0 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		197A4DA5243EB48C002D31D0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		1994D482243A94480090E08D /* MCAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,7 @@
 				1994D487243A94480090E08D /* SceneDelegate.swift */,
 				199C3A35243AD12D005E1EDB /* LoginViewController.swift */,
 				1994D4B6243A94AB0090E08D /* PlayerTableViewController.swift */,
+				1956B74E24511D3C00DF1B92 /* Server.swift */,
 				1994D48B243A94480090E08D /* Main.storyboard */,
 				1994D48E243A944A0090E08D /* Assets.xcassets */,
 				1994D490243A944A0090E08D /* LaunchScreen.storyboard */,
@@ -120,6 +125,7 @@
 				199C3A33243AB903005E1EDB /* PlayerTableViewCell.swift */,
 				197A4DA3243EB3B2002D31D0 /* PlayerDetailViewController.swift */,
 				197A4DA5243EB48C002D31D0 /* Player.swift */,
+				1956B750245124E500DF1B92 /* User.swift */,
 			);
 			path = MCAdmin;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 				197A4DA4243EB3B2002D31D0 /* PlayerDetailViewController.swift in Sources */,
 				1994D4B9243A95560090E08D /* AppDelegate.swift in Sources */,
 				197A4DA6243EB48C002D31D0 /* Player.swift in Sources */,
+				1956B751245124E500DF1B92 /* User.swift in Sources */,
 				1994D4B7243A94AB0090E08D /* PlayerTableViewController.swift in Sources */,
+				1956B74F24511D3C00DF1B92 /* Server.swift in Sources */,
 				1994D488243A94480090E08D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

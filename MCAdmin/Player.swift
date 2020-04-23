@@ -14,38 +14,40 @@ class Player {
     var username: String
     var group: String
     var status: Int
+    var server: Server
     
     // Bans
     var banned: Int
     var banExecutor: String
     
-    var APIToken: String
+    var loginToken: String
     
     // MARK: Init
-    init(uuid: String, username: String, group: String, status: Int, banned: Int, banExecutor: String) {
+    init(uuid: String, username: String, group: String, status: Int, server: Server, banned: Int, banExecutor: String) {
         self.uuid = uuid
         self.username = username
         self.group = group
         self.status = status
+        self.server = server
         
         self.banned = banned
         self.banExecutor = banExecutor
         
-        self.APIToken = (UserDefaults.standard.string(forKey: "APIToken") ?? "")
+        self.loginToken = (UserDefaults.standard.string(forKey: "loginToken") ?? "")
     }
     
     func kick() {
-        let url = "https://www.cwru.club/api/kick.php?token=" + APIToken + "&uuid=" + uuid + "&username=" + username
+        let url = "https://www.mcadmin.xyz/api/admin/kick?token=" + loginToken + "&uuid=" + uuid + "&username=" + username + "&sID=" + server.ID
         serverQuery(urlString: url)
     }
     
     func ban(val: Int) {
-        let url = "https://www.cwru.club/api/ban?token=" + APIToken + "&uuid=" + uuid + "&username=" + username + "&value=" + String(val)
+        let url = "https://www.mcadmin.xyz/api/admin/ban?token=" + loginToken + "&uuid=" + uuid + "&username="  + username + "&sID=" + server.ID + "&value=" + String(val)
         serverQuery(urlString: url)
     }
     
     func update() {
-        let urlString = "https://www.cwru.club/api/updatePlayer?token=" + APIToken + "&uuid=" + uuid
+        let urlString = "https://www.mcadmin.xyz/api/admin/updatePlayer?token=" + loginToken + "&uuid=" + uuid + "&sID=" + server.ID
         
         guard let myURL = URL(string: urlString) else {
             return
@@ -80,7 +82,7 @@ class Player {
         guard let myURL = URL(string: urlString) else {
             return
         }
-        
+                
         let request = URLRequest(url: myURL)
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -93,7 +95,7 @@ class Player {
             if let data = data {
 
                 let response = self.parseJsonResponse(data: data)
-
+            
                 if (response == "success") {
                     sleep(1)
                     self.update()
@@ -110,6 +112,7 @@ class Player {
 
         do {
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+            
             // Parse JSON data
             
             response = jsonResult?["response"] as! String

@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     private var loginURL = "https://www.mcadmin.xyz/api/user/login.php?username="
     private var token: String?
     
+    private var user: User?
+    
     let current = UNUserNotificationCenter.current()
 
     @IBOutlet weak var passwordField: UITextField!
@@ -161,7 +163,7 @@ class LoginViewController: UIViewController {
     }
     
     func updateNotificationsInDB(token: String, deviceID: String, currentStatus: Int) {
-        var url = "https://www.mcadmin.xyz/api/updateNotificationPrefs.php?token=" + token + "&device="
+        var url = "https://www.mcadmin.xyz/api/updateNotificationPrefs?token=" + token + "&device="
         url += deviceID + "&status=" + String(currentStatus)
 
         guard let myURL = URL(string: url) else {
@@ -199,6 +201,11 @@ class LoginViewController: UIViewController {
             resp.token = jsonResult?["token"] as? String
             resp.errors = jsonResult?["errors"] as? [String]
             resp.values = jsonResult?["values"] as? [String]
+            if (resp.status == "success") {
+                let perms = jsonResult?["permissions"] as? [String]
+                let username = jsonResult?["username"] as? String
+                user = User(loginToken: resp.token ?? "", username: username ?? "", permissions: perms ?? [String]())
+            }
             
         } catch {
             print(error)
@@ -209,10 +216,19 @@ class LoginViewController: UIViewController {
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "loginSegue":
+            guard let playerTableViewController = segue.destination as? PlayerTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            playerTableViewController.setUser(user: user!)
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

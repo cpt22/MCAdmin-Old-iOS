@@ -31,28 +31,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-M4-DDP">
-                                <rect key="frame" x="20" y="431" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYF-M4-DDP">
+                                <rect key="frame" x="22" y="431" width="372" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dub-LL-1xa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8P-ZV-TOV">
+                                <rect key="frame" x="22" y="375" width="372" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dub-LL-1xa">
                                 <rect key="frame" x="189" y="473" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="doLogin:" destination="DtK-TK-u5c" eventType="touchUpInside" id="LBh-O7-H9b"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8P-ZV-TOV">
-                                <rect key="frame" x="21" y="389" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="i8P-ZV-TOV" firstAttribute="top" secondItem="bLL-sv-oPi" secondAttribute="top" constant="287" id="7ez-Qg-ks4"/>
+                            <constraint firstItem="i8P-ZV-TOV" firstAttribute="leading" secondItem="cYF-M4-DDP" secondAttribute="leading" id="DgB-uA-rjO"/>
+                            <constraint firstItem="cYF-M4-DDP" firstAttribute="trailing" secondItem="BgL-mN-s48" secondAttribute="trailingMargin" id="KTM-4f-SsN"/>
+                            <constraint firstItem="dub-LL-1xa" firstAttribute="top" secondItem="cYF-M4-DDP" secondAttribute="bottom" constant="8" id="WFj-K1-3oD"/>
+                            <constraint firstItem="dub-LL-1xa" firstAttribute="top" secondItem="cYF-M4-DDP" secondAttribute="bottom" constant="8" id="aZV-EL-OZg"/>
+                            <constraint firstItem="cYF-M4-DDP" firstAttribute="leading" secondItem="bLL-sv-oPi" secondAttribute="leading" constant="22" id="dBU-qw-GEq"/>
+                            <constraint firstItem="i8P-ZV-TOV" firstAttribute="centerX" secondItem="dub-LL-1xa" secondAttribute="centerX" id="eZC-a7-Dpj"/>
+                            <constraint firstItem="i8P-ZV-TOV" firstAttribute="trailing" secondItem="cYF-M4-DDP" secondAttribute="trailing" id="lA6-hb-9Ie"/>
+                            <constraint firstItem="cYF-M4-DDP" firstAttribute="centerY" secondItem="BgL-mN-s48" secondAttribute="centerY" id="t50-Qs-hfS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bLL-sv-oPi"/>
                     </view>
                     <navigationItem key="navigationItem" id="8eo-Jo-CHb"/>
