@@ -39,6 +39,7 @@ class Player {
     func kick() {
         let url = "https://www.mcadmin.xyz/api/admin/kick?token=" + loginToken + "&uuid=" + uuid + "&username=" + username + "&sID=" + server.ID
         serverQuery(urlString: url)
+        print(url)
     }
     
     func ban(val: Int) {
