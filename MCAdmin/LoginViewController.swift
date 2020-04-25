@@ -163,7 +163,7 @@ class LoginViewController: UIViewController {
     }
     
     func updateNotificationsInDB(token: String, deviceID: String, currentStatus: Int) {
-        var url = "https://www.mcadmin.xyz/api/updateNotificationPrefs?token=" + token + "&device="
+        var url = "https://www.mcadmin.xyz/api/client/updateNotificationPrefs?token=" + token + "&device="
         url += deviceID + "&status=" + String(currentStatus)
 
         guard let myURL = URL(string: url) else {
