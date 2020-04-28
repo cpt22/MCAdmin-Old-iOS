@@ -102,8 +102,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-ih-F4I">
-                                            <rect key="frame" x="359" y="16" width="45" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time offline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-ih-F4I">
+                                            <rect key="frame" x="318" y="16" width="86" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="groupLabel" destination="87M-ih-F4I" id="FPh-th-IQa"/>
+                                    <outlet property="timeOfflineLabel" destination="87M-ih-F4I" id="k3E-le-fMM"/>
                                     <outlet property="usernameLabel" destination="RbD-cf-FlG" id="sca-vW-FgL"/>
                                     <outlet property="uuidLabel" destination="w8B-gT-sq2" id="TTP-Hg-ehC"/>
                                     <segue destination="QGV-Mx-YKN" kind="showDetail" identifier="showPlayerDetail" id="Ngl-IH-sYe"/>

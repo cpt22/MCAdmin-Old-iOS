@@ -22,9 +22,9 @@ class PlayerTableViewCell: UITableViewCell {
             uuidLabel.numberOfLines = 1
         }
     }
-    @IBOutlet weak var groupLabel:UILabel! {
+    @IBOutlet weak var timeOfflineLabel: UILabel! {
         didSet {
-            groupLabel.numberOfLines = 1
+            timeOfflineLabel.numberOfLines = 1
         }
     }
 

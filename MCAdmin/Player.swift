@@ -12,9 +12,10 @@ class Player {
     // MARK: Properties
     var uuid: String
     var username: String
-    var group: String
     var status: Int
     var server: Server
+    
+    var timeOffline: String
     
     // Bans
     var banned: Int
@@ -23,12 +24,13 @@ class Player {
     var loginToken: String
     
     // MARK: Init
-    init(uuid: String, username: String, group: String, status: Int, server: Server, banned: Int, banExecutor: String) {
+    init(uuid: String, username: String, status: Int, server: Server, timeOffline: String, banned: Int, banExecutor: String) {
         self.uuid = uuid
         self.username = username
-        self.group = group
         self.status = status
         self.server = server
+        
+        self.timeOffline = timeOffline
         
         self.banned = banned
         self.banExecutor = banExecutor
@@ -132,21 +134,25 @@ class Player {
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
             // Parse JSON data
             let jsonPlayers = jsonResult?["players"] as! [AnyObject]
-            for jsonPlayer in jsonPlayers {
-                self.uuid = jsonPlayer["uuid"] as! String
-                self.username = jsonPlayer["username"] as! String
-                self.status = jsonPlayer["status"] as! Int
-                self.group = jsonPlayer["primary_group"] as! String
-                
-                self.banned = jsonPlayer["banned"] as! Int
-                self.banExecutor = jsonPlayer["executor"] as! String
-            }
-    
+            let players = MCAUtils.processJSONPlayers(jsonPlayers: jsonPlayers, server: self.server)
+            loadNewPlayerData(player: players[0])
+            
             response = jsonResult?["response"] as! String
         } catch {
             print(error)
         }
         return response
 
+    }
+    
+    func loadNewPlayerData(player: Player) {
+        self.uuid = player.uuid
+        self.username = player.username
+        self.status = player.status
+        
+        self.timeOffline = player.timeOffline
+        
+        self.banned = player.banned
+        self.banExecutor = player.banExecutor
     }
 }
