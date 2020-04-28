@@ -18,13 +18,13 @@ class Player {
     var timeOffline: String
     
     // Bans
-    var banned: Int
+    var banned: Bool
     var banExecutor: String
     
     var loginToken: String
     
     // MARK: Init
-    init(uuid: String, username: String, status: Int, server: Server, timeOffline: String, banned: Int, banExecutor: String) {
+    init(uuid: String, username: String, status: Int, server: Server, timeOffline: String, banned: Bool, banExecutor: String) {
         self.uuid = uuid
         self.username = username
         self.status = status
@@ -44,8 +44,8 @@ class Player {
         print(url)
     }
     
-    func ban(val: Int) {
-        let url = "https://www.mcadmin.xyz/api/admin/ban?token=" + loginToken + "&uuid=" + uuid + "&username="  + username + "&sID=" + server.ID + "&value=" + String(val)
+    func ban(val: Bool) {
+        let url = "https://www.mcadmin.xyz/api/admin/ban?token=" + loginToken + "&uuid=" + uuid + "&username="  + username + "&sID=" + server.ID + "&value=" + (val ? "1" : "0")
         serverQuery(urlString: url)
     }
     

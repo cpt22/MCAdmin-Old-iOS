@@ -122,7 +122,6 @@
                                     <outlet property="timeOfflineLabel" destination="87M-ih-F4I" id="k3E-le-fMM"/>
                                     <outlet property="usernameLabel" destination="RbD-cf-FlG" id="sca-vW-FgL"/>
                                     <outlet property="uuidLabel" destination="w8B-gT-sq2" id="TTP-Hg-ehC"/>
-                                    <segue destination="QGV-Mx-YKN" kind="showDetail" identifier="showPlayerDetail" id="Ngl-IH-sYe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,25 +139,25 @@
         <!--Player Detail View Controller-->
         <scene sceneID="sxQ-K2-bjO">
             <objects>
-                <viewController id="QGV-Mx-YKN" customClass="PlayerDetailViewController" customModule="MCAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerDetail" id="QGV-Mx-YKN" customClass="PlayerDetailViewController" customModule="MCAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vd6-C5-ORE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eew-8K-y4H">
-                                <rect key="frame" x="136.5" y="50" width="141.5" height="38.5"/>
+                                <rect key="frame" x="136.5" y="94" width="141.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uuid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxe-Hu-eLN">
-                                <rect key="frame" x="190.5" y="96.5" width="33" height="21"/>
+                                <rect key="frame" x="190.5" y="140.5" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3h-4w-2UQ">
-                                <rect key="frame" x="181" y="764" width="52" height="44"/>
+                                <rect key="frame" x="181" y="818" width="52" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="BAN">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,7 +167,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIj-rk-7Hs">
-                                <rect key="frame" x="178" y="712" width="58" height="44"/>
+                                <rect key="frame" x="178" y="766" width="58" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="KICK">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

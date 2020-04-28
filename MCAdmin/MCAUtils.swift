@@ -46,7 +46,7 @@ class MCAUtils {
         let username = jsonPlayer["username"] as! String
         let status = jsonPlayer["status"] as! Int
         let timeOffline = jsonPlayer["timeOffline"] as! String
-        let banned = jsonPlayer["banned"] as! Int
+        let banned = jsonPlayer["banned"] as! Bool
         let banExecutor = jsonPlayer["executor"] as! String
         
         return Player(uuid: uuid, username: username, status: status, server: server, timeOffline: timeOffline, banned: banned, banExecutor: banExecutor);

@@ -18,7 +18,7 @@ class PlayerDetailViewController: UIViewController {
     @IBOutlet weak var banButton: UIButton!
     
     var player: Player?
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,13 +54,13 @@ class PlayerDetailViewController: UIViewController {
     }
     
     @IBAction func banButtonAction(_ sender: Any) {
-        var msg = "Are you sure you want to " + (player?.banned == 1 ? "UNBAN" : "BAN") + " " + self.player!.username
+        var msg = "Are you sure you want to " + (player?.banned == true ? "UNBAN" : "BAN") + " " + self.player!.username
             msg += "?"
         let dialogMessage = UIAlertController(title: "Confirm", message: msg, preferredStyle: .alert)
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-            self.player?.ban(val: (self.player?.banned == 1 ? 0 : 1))
+            self.player?.ban(val: (self.player?.banned == true ? false : true))
         })
         
         // Create Cancel button with action handlder
@@ -88,7 +88,7 @@ class PlayerDetailViewController: UIViewController {
             kickButton.tintColor = UIColor.lightGray
         }
         
-        if (player?.banned == 1) {
+        if (player?.banned == true) {
             banButton.setTitle("UNBAN", for: .normal)
         } else {
             banButton.setTitle("BAN", for: .normal)
